@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The hand</title>
+
+        <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body class="container-fluid">
+        <header class="container">
+            <!-- TITRE : The hand -->
+            <section >
+                <div class="container d-flex justify-content-center">
+                    <h1>The Hand</h1>
+                </div>
+                <div class="container d-flex flex-row justify-content-center">
+                    <ul class="col-12 nav nav-pills" id="myTab" role="presentation">
+                        <li class=" col-6 d-flex justify-content-center tabLink nav-item" role="presentation">
+                          <button class="nav-link active" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="home" aria-selected="true">Regles</button>
+                        </li>
+                        <li class="col-6 d-flex justify-content-center nav-item" role="presentation">
+                          <button class="nav-link" id="play-tab" data-bs-toggle="tab" data-bs-target="#play" type="button" role="tab" aria-controls="profile" aria-selected="false">Jouer</button>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </section>
+        </header>
+        <main class="container">
+            <section class="tab-content">
+                <!-- Tab : Rules -->
+                <div class="tab-pane active" id="rules" role="tabpanel" aria-labelledby="rules-tab">
+                    <h2>Regles</h2>
+                </div>
+
+                <!-- Tab : PLAY -->
+                <div class="tab-pane" id="play" role="tabpanel" aria-labelledby="play-tab">
+                    <!-- Board for CARD -->
+                    <div id="board" class="d-flex flex-row justify-content-around">
+                        <!-- Card 1 -->
+                        <div class="col-2 cardSite"></div>
+                        <!-- Card 2 -->
+                        <div class="col-2 cardSite"></div>
+                        <!-- Card 3 -->
+                        <div class="col-2 cardSite"></div>
+                        <!-- Card 4 -->
+                        <div class="col-2 cardSite"></div>
+                        <!-- Card 5 -->
+                        <div class="col-2 cardSite"></div>
+                        
+                    </div>
+                    <div style="text-align: center;">
+                        <p id="drawCombi"><span id="displayCombi">Tirage</span></p>
+                    </div>
+                
+                    <label for="customRange3" class="form-label">Mise</label>
+                    <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+
+                    <div class="col-6 mx-auto">
+                        <div class="input-group mb-3">
+                            <span id="less" class="input-group-text">-</span>
+                            <input id="bet" name="bet" type="number" class="form-control" value="1" min="1">
+                            <span id="more" class="input-group-text">+</span>
+                          </div>
+                        <button type="button" id="draw" onclick="drawHand()" class="btn btn-outline-primary btn-lg">Piocher les cartes</button>
+                        <button type="button" id="flip" onclick="flip()" class="btn btn-outline-success btn-lg">Retouner les cartes</button>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+        <footer class="container">
+              
+              <section class="footer">
+                <p class="copyright">
+                    Copyright © <span id="year"></span> 
+                    <br>
+                    Site en developpement, développé par Snoupax.
+                    <br>
+                    Tous droits réservés.
+                </p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </section>
+            
+        </footer>
+        <script src="css/bootstrap/js/bootstrap.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/drawHand.js"></script>
+        <script src="js/evaluator.js"></script>
+        <script>
+            const displayComb = document.getElementById("flip");
+            displayComb.addEventListener('click', async () => {
+                await pause(2500);
+                const displayCombi = document.getElementById("displayCombi");
+                displayCombi.innerHTML = ""
+                let combinaison = hand[0] + hand[1] + hand[2] + hand[3] + hand[4];
+                console.log(combinaison);
+                analyseHand(combinaison);
+			
+                evaluateHand();
+            })
+        </script>
+    </body>
+</html>
