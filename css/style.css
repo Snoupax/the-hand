@@ -9,7 +9,7 @@ header {
 }
 
 h1 {
-  background-image: url("css/Poker/pokertitle.png");
+  background-image: url("Poker/pokertitle.png");
   font-weight: bold;
   color: white;
   padding: 20px 50px;
@@ -21,7 +21,7 @@ h1 {
 
 
 #board {
-    background-image: url("css/Poker/pokerboard.jpg");
+    background-image: url("Poker/pokerboard.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 20px;
