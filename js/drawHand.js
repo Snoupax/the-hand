@@ -233,9 +233,10 @@ async function change(){
     let card = document.getElementById("card"+ (i+1));
     
     if((card.checked == true)){
-      await pause(50);
+      
       const cards = document.getElementsByClassName("cardSite");
       cards[i].innerHTML = "";
+      await pause(250);
 
 
       const input = document.createElement("input");
