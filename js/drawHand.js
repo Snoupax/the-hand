@@ -68,7 +68,7 @@ async function drawHand(){
       await pause(50);
       cards[i].innerHTML = "";
    }
-   const displayReward= document.getElementById("rewardDisplay")
+   const displayReward= document.getElementById("rewardDisplay");
    const displayCombi = document.getElementById("displayCombi");
    displayCombi.innerHTML = "Tirage"
    displayReward.innerHTML = "Récompense"
@@ -270,7 +270,9 @@ async function change(){
 
   }
   const displayCombi = document.getElementById("displayCombi");
+  const displayReward= document.getElementById("rewardDisplay");
   displayCombi.innerHTML = "Tirage"
+  displayReward.innerHTML = "Récompense"
   const alert = document.getElementById("alert");
   alert.innerHTML = "Retourner les cartes pour voir le resultat";
   changed = 1;

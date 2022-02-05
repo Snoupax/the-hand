@@ -150,7 +150,8 @@ async function evaluateHand(){
                                                 }
                                                 royalFlush = 1;
                                                 none++;
-                                                displayCombi.innerHTML = "*~Quinte Flush Royal~*"
+                                                displayCombi.innerHTML = "*~Quinte Flush Royal~*";
+                                                displayReward.innerHTML = "x30 & " + bet;
                                                 if(changed==1 && payed ==0){
                                                     bet = bet * 30;
                                                     payed++;
@@ -203,6 +204,7 @@ async function evaluateHand(){
                                                 straightFlush = 1;
                                                 none++;
                                                 displayCombi.innerHTML = "*~ Quinte Flush ~*"
+                                                displayReward.innerHTML = "x10 & " + bet;
                                                 if(changed==1 && payed ==0){
                                                     bet = bet * 10;
                                                     payed++;
@@ -234,7 +236,8 @@ async function evaluateHand(){
         if(value[i]==4) {
             carre = translateValue(i);
             none++;
-            displayCombi.innerHTML = "*~ Carré de carre~*"
+            displayCombi.innerHTML = "*~ Carré de carre~*";
+            displayReward.innerHTML = "x5 & " + bet;
             if(changed==1 && payed ==0){
                 payed++;
                 bet = bet * 5;
@@ -262,6 +265,7 @@ async function evaluateHand(){
                         full2 = translateValue(y);
                         none++;
                         displayCombi.innerHTML = "*~ Full de "+ full3 +"&" + full2 + "~*"
+                        displayReward.innerHTML = "x3 & " + bet;
                         if(changed==1 && payed ==0){
                             payed++;
                             bet = bet * 3;
@@ -303,6 +307,7 @@ async function evaluateHand(){
                                                 straight = 1;
                                                 none++;
                                                 displayCombi.innerHTML = "*~ Quinte ~*"
+                                                displayReward.innerHTML = "x2 & " + bet;
                                                 if(changed==1 && payed ==0){
                                                     payed++;
                                                     bet = bet * 2;
@@ -339,6 +344,7 @@ async function evaluateHand(){
             color = translateColor(i);
             none++;
             displayCombi.innerHTML = "*~ Flush de color~*"
+            displayReward.innerHTML = "x2 & " + bet;
             if(changed==1 && payed ==0){
                 payed++;
                 bet = bet * 2;
@@ -376,6 +382,7 @@ async function evaluateHand(){
             brelan = translateValue(i);
             none++;
             displayCombi.innerHTML = "*~ Brelan de " + brelan +" ~*"
+            displayReward.innerHTML = "x1.8 & " + bet;
             if(changed==1 && payed ==0){
                 bet = bet * 1.8;
                 payed++;
@@ -408,6 +415,7 @@ async function evaluateHand(){
                         double_Pair = translateValue(y);
                         none++;
                         displayCombi.innerHTML = " *~ Double paire de "+ doublePair+ " & " + double_Pair +" ~*"
+                        displayReward.innerHTML = "x1.5 & " + bet;
                         if(changed==1 && payed ==0){
                             bet = bet * 1.5;
                             payed++;
@@ -449,6 +457,7 @@ async function evaluateHand(){
             pair = translateValue(i);
             none++;
             displayCombi.innerHTML = "*~ Paire de "+ pair+" ~*"
+            displayReward.innerHTML = "x1 & " + bet;
             if(changed==1 && payed ==0){
                 bet *= 1;
                 payed++;
