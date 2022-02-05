@@ -4,7 +4,7 @@ Un qui va compter le nombre de 1, 2, 3, 4, 5, 6, 7, 8, 9, T, J, Q, K, A. (13)
 Un qui va compter le nombre de k(Carreau), c(Coeur), p(Pique), t(Trefle). (4)
 
 */
-
+const displayReward= document.getElementById("rewardDisplay")
 let value = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,];
 let symbole = [ 0, 0, 0, 0,];
 
@@ -115,7 +115,7 @@ function translateColor(i)
 Permets d'évaluer la main et d'afficher le résultat.
 */
 
-function evaluateHand(){
+async function evaluateHand(){
 
     const displayCombi = document.getElementById("displayCombi");
     let straightFlush = 0;
@@ -150,7 +150,19 @@ function evaluateHand(){
                                                 }
                                                 royalFlush = 1;
                                                 none++;
-                                                displayCombi.innerHTML = "*~Quinte Flush Royal~*";}
+                                                displayCombi.innerHTML = "*~Quinte Flush Royal~*"
+                                                if(changed==1 && payed ==0){
+                                                    bet = bet * 30;
+                                                    payed++;
+                                                    for(h=0; h<bet; h++){
+                                                        await pause(25);
+                                                        coins++;
+                                                        coinsInput.value = coins;
+                                                        console.log("coins = "+ coins)
+                                                    }
+                                                    console.log(bet);
+                                                    displayReward.innerHTML = "x30 & " + bet;
+                                                };}
                                         }
                                     }
                                 }
@@ -190,7 +202,19 @@ function evaluateHand(){
                                                 }
                                                 straightFlush = 1;
                                                 none++;
-                                                displayCombi.innerHTML = "*~ Quinte Flush ~*";}
+                                                displayCombi.innerHTML = "*~ Quinte Flush ~*"
+                                                if(changed==1 && payed ==0){
+                                                    bet = bet * 10;
+                                                    payed++;
+                                                    for(h=0; h<bet; h++){
+                                                        await pause(25);
+                                                        coins++;
+                                                        coinsInput.value = coins;
+                                                        console.log("coins = "+ coins)
+                                                    }
+                                                    console.log(bet)
+                                                    displayReward.innerHTML = "x10 & " + bet;
+                                                };}
                                         }
                                     }
                                 }
@@ -210,7 +234,19 @@ function evaluateHand(){
         if(value[i]==4) {
             carre = translateValue(i);
             none++;
-            displayCombi.innerHTML = "*~ Carré de carre~*";
+            displayCombi.innerHTML = "*~ Carré de carre~*"
+            if(changed==1 && payed ==0){
+                payed++;
+                bet = bet * 5;
+                for(h=0; h<bet; h++){
+                    await pause(25);
+                    coins++;
+                    coinsInput.value = coins;
+                    console.log("coins = "+ coins)
+                }
+                console.log(bet);
+                displayReward.innerHTML = "x5 & " + bet;
+            };
         }
     }
     
@@ -225,7 +261,19 @@ function evaluateHand(){
                         full3 = translateValue(i);
                         full2 = translateValue(y);
                         none++;
-                        displayCombi.innerHTML = "*~ Full de full3 & full2 ~*";
+                        displayCombi.innerHTML = "*~ Full de "+ full3 +"&" + full2 + "~*"
+                        if(changed==1 && payed ==0){
+                            payed++;
+                            bet = bet * 3;
+                            for(h=0; h<bet; h++){
+                                await pause(25);
+                                coins++;
+                                coinsInput.value = coins;
+                                console.log("coins = "+ coins)
+                            }
+                            console.log(bet)
+                            displayReward.innerHTML = "x3 & " + bet;
+                        };
                     }
                 }
             }
@@ -254,7 +302,19 @@ function evaluateHand(){
                                                 }
                                                 straight = 1;
                                                 none++;
-                                                displayCombi.innerHTML = "*~ Quinte ~*";
+                                                displayCombi.innerHTML = "*~ Quinte ~*"
+                                                if(changed==1 && payed ==0){
+                                                    payed++;
+                                                    bet = bet * 2;
+                                                    for(h=0; h<bet; h++){
+                                                        await pause(25);
+                                                        coins++;
+                                                        coinsInput.value = coins;
+                                                        console.log("coins = "+ coins)
+                                                    }
+                                                    console.log(bet)
+                                                    displayReward.innerHTML = "x2 & " + bet;
+                                                };
                                             }                                            
                                         }
                                     }
@@ -278,7 +338,19 @@ function evaluateHand(){
             }
             color = translateColor(i);
             none++;
-            displayCombi.innerHTML = "*~ Flush de color~*";
+            displayCombi.innerHTML = "*~ Flush de color~*"
+            if(changed==1 && payed ==0){
+                payed++;
+                bet = bet * 2;
+                for(h=0; h<bet; h++){
+                    await pause(25);
+                    coins++;
+                    coinsInput.value = coins;
+                    console.log("coins = "+ coins)
+                }
+                console.log(bet)
+                displayReward.innerHTML = "x2 & " + bet;
+            };
         }
     }
 
@@ -303,7 +375,19 @@ function evaluateHand(){
             }
             brelan = translateValue(i);
             none++;
-            displayCombi.innerHTML = "*~ Brelan de " + brelan +" ~*"; 
+            displayCombi.innerHTML = "*~ Brelan de " + brelan +" ~*"
+            if(changed==1 && payed ==0){
+                bet = bet * 1.8;
+                payed++;
+                for(h=0; h<bet; h++){
+                    await pause(25);
+                    coins++;
+                    coinsInput.value = coins;
+                    console.log("coins = "+ coins)
+                }
+                console.log(bet)
+                displayReward.innerHTML = "x1.8 & " + bet;
+            }; 
         }
     }   
 
@@ -323,7 +407,19 @@ function evaluateHand(){
                         doublePair = translateValue(i);
                         double_Pair = translateValue(y);
                         none++;
-                        displayCombi.innerHTML = " *~ Double paire de "+ doublePair+ " & " + double_Pair +" ~*"; 
+                        displayCombi.innerHTML = " *~ Double paire de "+ doublePair+ " & " + double_Pair +" ~*"
+                        if(changed==1 && payed ==0){
+                            bet = bet * 1.5;
+                            payed++;
+                            for(h=0; h<bet; h++){
+                                await pause(25);
+                                coins++;
+                                coinsInput.value = coins;
+                                console.log("coins = "+ coins)
+                            }
+                            console.log(bet)
+                            displayReward.innerHTML = "x1.5 & " + bet;
+                        }; 
                     }     
                 }
                      
@@ -352,7 +448,21 @@ function evaluateHand(){
             }
             pair = translateValue(i);
             none++;
-            displayCombi.innerHTML = "*~ Paire de "+ pair+" ~*"; 
+            displayCombi.innerHTML = "*~ Paire de "+ pair+" ~*"
+            if(changed==1 && payed ==0){
+                bet *= 1;
+                payed++;
+                for(h=0; h<bet; h++){
+                    await pause(25);
+                    coins++;
+                    coinsInput.value = coins;
+                    console.log("coins = "+ coins)
+                    console.log("h = " + h)
+                }
+                console.log(bet);
+                displayReward.innerHTML = "x1 & " + bet;
+
+            }; 
         }
     }        
     
@@ -360,30 +470,43 @@ function evaluateHand(){
     if(none === 0) {
         if(value[13] == 1) {
             displayCombi.innerHTML = "*~ Hauteur AS ~*";
+            displayReward.innerHTML = "x0 & " + bet;
         } else if (value[12] == 1) {
             displayCombi.innerHTML = "*~ Hauteur Roi ~*";
+            displayReward.innerHTML = "x0 & " + bet;
         } else if (value[11] == 1) {
             displayCombi.innerHTML = "*~ Hauteur Dame ~*";
+            displayReward.innerHTML = "x0 & " + bet;
         } else if (value[10] == 1) {
             displayCombi.innerHTML = "*~ Hauteur Vallet ~*";
+            displayReward.innerHTML = "x0 & " + bet;
         } else if (value[9] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 10 ~*";
+            displayReward.innerHTML = "x0 & " + bet;
         } else if (value[8] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 9 ~*";
+            displayReward.innerHTML = "x0 & " + bet;
         } else if (value[7] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 8 ~*";
+            displayReward.innerHTML = "x0 & " + bet;
         } else if (value[6] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 7 ~*";
+            displayReward.innerHTML = "x0 & " + bet;
         } else if (value[5] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 6 ~*";
+            displayReward.innerHTML = "x0 & " + bet;
         } else if (value[4] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 5 ~*";
+            displayReward.innerHTML = "x0 & " + bet;
         } else if (value[3] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 4 ~*";
+            displayReward.innerHTML = "x0 & " + bet;
         } else if (value[2] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 3 ~*";
+            displayReward.innerHTML = "x0 & " + bet;
         } else if (value[1] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 2 ~*";
+            displayReward.innerHTML = "x0 & " + bet;
         }
     }
 }

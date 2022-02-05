@@ -41,6 +41,7 @@ async function drawHand(){
   let min = 0;
   let max = 51;
   let i = 0;
+  changed = 0;
 
   // Generation de 5 nombres aléatoires sans doublons.
   let randomNumbers = [];
@@ -67,8 +68,10 @@ async function drawHand(){
       await pause(50);
       cards[i].innerHTML = "";
    }
+   const displayReward= document.getElementById("rewardDisplay")
    const displayCombi = document.getElementById("displayCombi");
    displayCombi.innerHTML = "Tirage"
+   displayReward.innerHTML = "Récompense"
     for(i = 0; i < 5; i++){
     await pause(100);
     
@@ -116,23 +119,6 @@ async function drawHand(){
 
 
 // Fonction pour ajouter ou soustrait à la mise (bet)
-
-let bet = parseInt(document.getElementById("bet").value);
-let betField = document.getElementById("bet");
-const less = document.getElementById("less");
-const more = document.getElementById("more");
-more.addEventListener('click', () => {
-  if(bet >= 0){
-    bet++;
-    betField.value = bet;
-  }
-})
-less.addEventListener('click', () => {
-  if(bet > 1){
-    bet--;
-    betField.value = bet;
-  }
-})
 
 
 // Fonction pause (Pour mettre du delai à utiliser sur function async)
@@ -207,7 +193,11 @@ document.getElementById("board").addEventListener('click', () => {
 
     evaluateHand();
     const alert = document.getElementById("alert");
-    alert.innerHTML = "Retourner les cartes que vous voulez changer avant de cliquer sur le bouton 'Changer les cartes'";
+    if(changed == 0 ){
+      alert.innerHTML = "Retourner les cartes que vous voulez changer avant de cliquer sur le bouton 'Changer les cartes'";
+    } else {
+      alert.innerHTML = "Piocher pour jouer à nouveau."
+    }
   }
   
 })
@@ -226,6 +216,8 @@ préparer les nouvelles cartes à ajouter
 retirer les cartes retourner
 
 ajouter les nouvelle carte */
+
+let changed;
 
 async function change(){
 
@@ -281,4 +273,31 @@ async function change(){
   displayCombi.innerHTML = "Tirage"
   const alert = document.getElementById("alert");
   alert.innerHTML = "Retourner les cartes pour voir le resultat";
+  changed = 1;
+  payed= 0;
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

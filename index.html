@@ -31,6 +31,21 @@
                 <!-- Tab : Rules -->
                 <div class="tab-pane active" id="rules" role="tabpanel" aria-labelledby="rules-tab">
                     <h2>Regles</h2>
+                    <p>Yoyo, ici c'est les règles t'as vu.<br>
+                        Alors, c'est simple, le but du jeu est de réussir à faire la meilleure combinaison de 5 cartes.<br>
+                        Vous commencez avec 100 coins qui vous serviront à miser lors de vos pioches.<br>
+                        Vous fixez votre mise et vous piocherez 5 cartes.<br>
+                        Votre mise vous sera retirée.<br>
+                        Vous pouvez les retourner soit en cliquant sur chaque d'elle, soit en appuiant sur le bouton "Retourner les cartes".<br>
+                        Vous aurez votre premiere combinaison de cartes. <br>
+                        Si vous souhaitez en changer une ou plusieurs, il vous suffira de cliquer dessus afin de les retourner avant d'appuier sur le bouton "Changer les cartes".<br>
+                        Si la premiere combinaison vous satisfait, vous pouvez directement appuier sur le bouton.<br>
+                        Vous gagnerez votre récompense. <br>
+
+
+                        Voici comment sont distribué les récompenses : 
+
+                    </p>
                 </div>
 
                 <!-- Tab : PLAY -->
@@ -56,17 +71,23 @@
                     <div style="text-align: center;">
                         <p id="drawCombi"><span id="displayCombi">Tirage</span></p>
                     </div>
+                    <div style="text-align: center;">
+                        <p id="rewardDisplay"><span id="displayRewards">Récompense</span></p>
+                    </div>
                 
-                    <label for="customRange3" class="form-label">Mise</label>
+                    
                     <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
 
                     <div class="col-7 mx-auto">
                         <div class="input-group mb-3">
-                            <span id="less" class="input-group-text">-</span>
-                            <input id="bet" name="bet" type="number" class="form-control" value="1" min="1">
-                            <span id="more" class="input-group-text">+</span>
+                            <label for="customRange3" class="form-label">Coins : </label>
+                            <input id="coins" name="coins" type="number" class="form-control" value="100" min="0" disabled="disabled">
                           </div>
-                        <button type="button" id="draw" onclick="drawHand()" class="btn btn-outline-primary btn-lg">Piocher les cartes</button>
+                        <div class="input-group mb-3">
+                            <label for="customRange3" class="form-label">Mise</label>
+                            <input id="bet" name="bet" type="number" class="form-control" value="10" min="1">
+                          </div>
+                        <button type="button" id="draw" onclick="drawHand(), betou()" class="btn btn-outline-primary btn-lg">Piocher les cartes</button>
                         <button type="button" id="flip" onclick="flip()" class="btn btn-outline-success btn-lg">Retouner les cartes</button>
                         <button type="button" id="change" onclick="change()" class="btn btn-outline-danger btn-lg">Changer les cartes</button>
                     </div>
@@ -97,8 +118,6 @@
         <script src="js/main.js"></script>
         <script src="js/drawHand.js"></script>
         <script src="js/evaluator.js"></script>
-        <script>
-
-        </script>
+        <script src="js/coins.js"></script>
     </body>
 </html>
