@@ -26,7 +26,7 @@ console.log(bet);
 
 async function betou() {
     bet = document.getElementById("bet").value;
-    if(coins<bet){
+    if(parseInt(coins)<bet){
         document.getElementById('draw').setAttribute("disabled", "disabled")
     } else {
         for(i=0; i <bet; i++){
@@ -47,7 +47,7 @@ async function betou() {
 
 function betIsGood() {
     bet = document.getElementById("bet").value;
-    if(coins<bet){
+    if(parseInt(coins)<bet){
         document.getElementById('draw').setAttribute("disabled", "disabled")
     } else {
         document.getElementById('draw').removeAttribute("disabled", "disabled")
