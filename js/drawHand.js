@@ -37,7 +37,7 @@ deck = [
  */
 
 async function drawHand(){
-
+  payed= 0;
   let min = 0;
   let max = 51;
   let i = 0;
@@ -112,6 +112,8 @@ async function drawHand(){
 
   const alert = document.getElementById("alert");
   alert.innerHTML = "Cliquer sur les cartes pour les retourner ou cliquer sur le bouton 'Retourner les cartes'";
+  const betDisable = document.getElementById("bet");
+  betDisable.setAttribute("disabled", "disabled")
 
 }
 
@@ -272,15 +274,37 @@ async function change(){
   displayCombi.innerHTML = "Tirage"
   displayReward.innerHTML = "Récompense"
   const alert = document.getElementById("alert");
-  alert.innerHTML = "Retourner les cartes pour voir le resultat";
+  alert.innerHTML = "Retourner les cartes pour voir le resultat ou cliquer sur le Board";
   changed = 1;
-  payed= 0;
+  
 
-
+  const betDisable = document.getElementById("bet");
+  betDisable.removeAttribute("disabled", "disabled")
 
 }
 
+function lockBoard() {
+  if(changed==1){
+    let u = 0;
+    for(i=0;i<5;i++){
+      let card = document.getElementById("card"+ (i+1));
+      
+      if((card.checked == false)){
+        u++;
+      } else {
+        break;
+      }
+  }
+    if(u==5){
+      for(i=0; i<5; i++){
+        let card = document.getElementById("card"+ (i+1));
+        card.setAttribute("disabled", "disabled");
+      }
+    }
+  }
+}
 
+setInterval(lockBoard, 1000)
 
 
 

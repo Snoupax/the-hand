@@ -21,6 +21,7 @@ let coins = document.getElementById("coins").value;
 let coinsInput = document.getElementById("coins");
 let bet = 0;
 let payed = 0;
+let betVerif
 console.log(bet);
 
 
@@ -46,7 +47,7 @@ async function betou() {
 
 
 function betIsGood() {
-    bet = document.getElementById("bet").value;
+    betVerif = document.getElementById("bet").value;
     if(parseInt(coins)<parseInt(bet)){
         document.getElementById('draw').setAttribute("disabled", "disabled")
     } else {
