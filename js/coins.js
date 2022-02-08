@@ -21,7 +21,7 @@ let coins = document.getElementById("coins").value;
 let coinsInput = document.getElementById("coins");
 let bet = 0;
 let payed = 0;
-let betVerif
+let betVerif = 0;
 console.log(bet);
 
 

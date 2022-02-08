@@ -385,7 +385,7 @@ async function evaluateHand(){
             displayCombi.innerHTML = "*~ Brelan de " + brelan +" ~*"
             displayReward.innerHTML = "Multiplacateur x1.8 & récompense : " + bet;
             if(changed==1 && payed ==0){
-                bet = bet * 1.8;
+                bet = (bet * 18)/10;
                 payed++;
                 for(h=0; h<bet; h++){
                     await pause(25);
@@ -481,43 +481,43 @@ async function evaluateHand(){
     if(none === 0) {
         if(value[13] == 1) {
             displayCombi.innerHTML = "*~ Hauteur AS ~*";
-            displayReward.innerHTML = "Multiplacateur x0 & récompense : " + bet;
+            displayReward.innerHTML = "Multiplacateur x0 & récompense : 0";
         } else if (value[12] == 1) {
             displayCombi.innerHTML = "*~ Hauteur Roi ~*";
-            displayReward.innerHTML = "Multiplacateur x0 & récompense : " + bet;
+            displayReward.innerHTML = "Multiplacateur x0 & récompense : 0";
         } else if (value[11] == 1) {
             displayCombi.innerHTML = "*~ Hauteur Dame ~*";
-            displayReward.innerHTML = "Multiplacateur x0 & récompense : " + bet;
+            displayReward.innerHTML = "Multiplacateur x0 & récompense : 0";
         } else if (value[10] == 1) {
             displayCombi.innerHTML = "*~ Hauteur Vallet ~*";
-            displayReward.innerHTML = "Multiplacateur x0 & récompense : " + bet;
+            displayReward.innerHTML = "Multiplacateur x0 & récompense : 0";
         } else if (value[9] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 10 ~*";
-            displayReward.innerHTML = "Multiplacateur x0 & récompense : " + bet;
+            displayReward.innerHTML = "Multiplacateur x0 & récompense : 0";
         } else if (value[8] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 9 ~*";
-            displayReward.innerHTML = "Multiplacateur x0 & récompense : " + bet;
+            displayReward.innerHTML = "Multiplacateur x0 & récompense : 0";
         } else if (value[7] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 8 ~*";
-            displayReward.innerHTML = "Multiplacateur x0 & récompense : " + bet;
+            displayReward.innerHTML = "Multiplacateur x0 & récompense : 0";
         } else if (value[6] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 7 ~*";
-            displayReward.innerHTML = "Multiplacateur x0 & récompense : " + bet;
+            displayReward.innerHTML = "Multiplacateur x0 & récompense : 0";
         } else if (value[5] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 6 ~*";
-            displayReward.innerHTML = "Multiplacateur x0 & récompense : " + bet;
+            displayReward.innerHTML = "Multiplacateur x0 & récompense : 0";
         } else if (value[4] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 5 ~*";
-            displayReward.innerHTML = "Multiplacateur x0 & récompense : " + bet;
+            displayReward.innerHTML = "Multiplacateur x0 & récompense : 0";
         } else if (value[3] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 4 ~*";
-            displayReward.innerHTML = "Multiplacateur x0 & récompense : " + bet;
+            displayReward.innerHTML = "Multiplacateur x0 & récompense : 0";
         } else if (value[2] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 3 ~*";
-            displayReward.innerHTML = "Multiplacateur x0 & récompense : " + bet;
+            displayReward.innerHTML = "Multiplacateur x0 & récompense : 0";
         } else if (value[1] == 1) {
             displayCombi.innerHTML = "*~ Hauteur 2 ~*";
-            displayReward.innerHTML = "Multiplacateur x0 & récompense : " + bet;
+            displayReward.innerHTML = "Multiplacateur x0 & récompense : 0";
         }
     }
 }
