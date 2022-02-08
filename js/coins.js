@@ -26,15 +26,32 @@ console.log(bet);
 
 async function betou() {
     bet = document.getElementById("bet").value;
-    for(i=0; i <bet; i++){
-        await pause(25);
-        coins--;
-        coinsInput.value = coins;
-        console.log("coins = "+ coins)
-        
+    if(coins<bet){
+        document.getElementById('draw').setAttribute("disabled", "disabled")
+    } else {
+        for(i=0; i <bet; i++){
+            await pause(25);
+            coins--;
+            coinsInput.value = coins;
+            console.log("coins = "+ coins)
+            
+        }
     }
+    
     if(coins<bet){
         document.getElementById('draw').setAttribute("disabled", "disabled")
         console.log(bet);
     }
 }
+
+
+function betIsGood() {
+    bet = document.getElementById("bet").value;
+    if(coins<bet){
+        document.getElementById('draw').setAttribute("disabled", "disabled")
+    } else {
+        document.getElementById('draw').removeAttribute("disabled", "disabled")
+    }
+}
+
+setInterval(betIsGood, 100);

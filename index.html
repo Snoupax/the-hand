@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body class="container-fluid">
+    <body onload="betIsGood()" class="container-fluid">
         <header class="container">
             <!-- TITRE : The hand -->
             <section >
@@ -16,7 +16,7 @@
                 <div class="container d-flex flex-row justify-content-center">
                     <ul class="col-12 nav nav-pills" id="myTab" role="presentation">
                         <li class=" col-6 d-flex justify-content-center tabLink nav-item" role="presentation">
-                          <button class="nav-link active" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="home" aria-selected="true">Regles</button>
+                          <button class="nav-link active" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="home" aria-selected="true">Règles</button>
                         </li>
                         <li class="col-6 d-flex justify-content-center nav-item" role="presentation">
                           <button class="nav-link" id="play-tab" data-bs-toggle="tab" data-bs-target="#play" type="button" role="tab" aria-controls="profile" aria-selected="false">Jouer</button>
@@ -32,7 +32,7 @@
                 <div class="tab-pane active" id="rules" role="tabpanel" aria-labelledby="rules-tab">
                     <h2>Regles</h2>
                     <p>Yoyo, ici c'est les règles t'as vu.<br>
-                        Alors, c'est simple, le but du jeu est de réussir à faire la meilleure combinaison de 5 cartes.<br>
+                        Alors, le but du jeu est de réussir à faire les meilleure combinaison de 5 cartes à la suite pour engrenger un maximum de coins.<br>
                         Vous commencez avec 100 coins qui vous serviront à miser lors de vos pioches.<br>
                         Vous fixez votre mise et vous piocherez 5 cartes.<br>
                         Votre mise vous sera retirée.<br>
@@ -44,11 +44,11 @@
 
 
                         Voici comment sont distribué les récompenses : <br>
-                        Pair = x1<br>
-                        Double Pair= x1.5<br>
+                        Paire = x1<br>
+                        Double Paire= x1.5<br>
                         Brelan = x1.8<br>
-                        Couleur = x2<br>
-                        Suite = x2<br>
+                        Flush = x2<br>
+                        Quinte = x2<br>
                         Full = x3<br>
                         Carré = x5<br>
                         Suite de Couleur = x10<br>

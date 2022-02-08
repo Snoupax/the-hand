@@ -111,7 +111,7 @@ async function drawHand(){
   }
 
   const alert = document.getElementById("alert");
-  alert.innerHTML = "Cliques sur les cartes pour les retourner !";
+  alert.innerHTML = "Cliquer sur les cartes pour les retourner ou cliquer sur le bouton 'Retourner les cartes'";
 
 }
 
@@ -148,7 +148,7 @@ async function flip (){
 
   }
   const alert = document.getElementById("alert");
-  alert.innerHTML = "Retourner les cartes que vous voulez changer avant de cliquer sur le bouton 'Changer les cartes'";
+  alert.innerHTML = "Cliquer sur les cartes que vous souhaitez changer puis cliquer sur le bouton 'Changer les cartes'";
   
 }
 
@@ -181,8 +181,6 @@ document.getElementById("board").addEventListener('click', () => {
       } else {
         break;
       }
-
-      
   }
   if(u==5){
     const displayCombi = document.getElementById("displayCombi");
@@ -196,7 +194,7 @@ document.getElementById("board").addEventListener('click', () => {
     if(changed == 0 ){
       alert.innerHTML = "Retourner les cartes que vous voulez changer avant de cliquer sur le bouton 'Changer les cartes'";
     } else {
-      alert.innerHTML = "Piocher pour jouer à nouveau."
+      alert.innerHTML = "Piocher pour jouer une autre main"
     }
   }
   
